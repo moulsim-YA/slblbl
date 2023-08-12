@@ -119,14 +119,11 @@ button:hover{
     }
 }
 @media (max-width: 700px) {
-    main, .turns {
-      width: 490px;
-      
-    }
+    
     .grid{
-        width:490px;
-        grid-template-columns: repeat(3,90px);
-        grid-template-rows:repeat(3,90px) 30px;
+        width:50%;
+        grid-template-columns: repeat(3,50px);
+        grid-template-rows:repeat(3,50px) 20px;
         gap: 5px;
     }
   }
