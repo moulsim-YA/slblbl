@@ -22,13 +22,13 @@ body{
 body{
     display: flex;
     flex-direction: column;
-    
     padding: 90px 90px;
     color: white;
     align-items: center;
     justify-content: center;
     outline-color: white;
 }
+
 button{
     background-color: transparent;
     border-radius: 4px;
@@ -118,12 +118,16 @@ button:hover{
         transform: translateY(0);
     }
 }
-@media (max-width: 700px) {
+@media (min-width: 700px) {
     
+    .squares{
+        width: 90px;
+        height: 90px;
+    }
     .grid{
-        width:50%;
-        grid-template-columns: repeat(3,50px);
-        grid-template-rows:repeat(3,50px) 20px;
+        width : 500px;
+        grid-template-columns: repeat(3,90px);
+        grid-template-rows:repeat(3,90px) 40px;
         gap: 5px;
     }
   }
@@ -164,8 +168,7 @@ button:hover{
     background-color: #22223B;
     background-size: contain;
     position: relative;
-    width: 150px;
-    height: 150px;
+    
     border-radius: 4px;
     align-items: center;
     justify-content: center;
