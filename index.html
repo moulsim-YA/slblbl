@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel ="stylesheet" href = "TTT.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap" rel="stylesheet">
+    <script
+      src="https://kit.fontawesome.com/3bfd3ce9e5.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>TIC TAC TOE</title>
+</head>
+<body>
+    <main>
+        <div class="menu" data-id = "menu">
+            <div class="turns" data-id = "turns">
+                <i class = "fa-solid fa-x blue"></i>
+                <p class= "blue"> It's your turn!</p>
+            </div>
+            <div class="options-btn border" data-id = "options">
+                <button class = "options--r" data-id="menu-btn">Options
+                    <i class = "fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="options hidden" data-id = "options-menu">
+                    <button class = "reset" data-id = "reset-btn">RESET</button>
+                    <button class = "new-game" data-id = "new-game">NEW GAME</button>
+                </div>
+            </div>
+        </div>
+        <div class = "grid" data-id = "grid">
+            <!--game board-->
+            <div id = "1" class="squares" data-id = "squares"></div>
+            <div id = "2" class="squares" data-id = "squares"></div>
+            <div id = "3" class="squares" data-id = "squares"></div>
+            <div id = "4" class="squares" data-id = "squares"></div>
+            <div id = "5" class="squares" data-id = "squares"></div>
+            <div id = "6" class="squares" data-id = "squares"></div>
+            <div id = "7" class="squares" data-id = "squares"></div>
+            <div id = "8" class="squares" data-id = "squares"></div>
+            <div id = "9" class="squares" data-id = "squares"></div>
+            <!--scores-->
+            <div class="player-1 float">
+                <p class = "blue">Player 1</p>
+                <span data-id = "p1-wins">0 wins</span>
+            </div>
+            <div class="ties float">
+                <p class = "white">Ties</p>
+                <span data-id = "tie">0 ties</span>
+            </div>
+            <div class="player-2 float">
+                <p class = "red">Player 2</p>
+                <span data-id = "p2-wins">0 wins</span>
+            </div>
+            <div class = "pop-up hidden" data-id = "winner-window">
+                <p data-id = "winner">Winner</p>
+                <button class="play-again" data-id = "play-again">Play again</button>
+            </div>
+        </div>
+    </main>
+    <script src = "./javascript/App.js" type = "module"></script>
+</body>
+</html>
