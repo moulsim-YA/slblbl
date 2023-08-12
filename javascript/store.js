@@ -18,7 +18,7 @@ export default class Storage{
         return item;
     }
     check_winner(parse,pressed){
-        console.log(pressed);
+        
         const len = this.winning_patterns.length;
         var key =[];
         let count = 0;

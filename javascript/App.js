@@ -48,7 +48,7 @@ function init(){
     view.newbtn(event => {
         view.clearMoves();
         view.closeMenu();
-        view.updateScores(scores[0],scores[1],scores[2]);
+        view.updateScores(results[0],results[1],results[2]);
         view.setTurnindicator(player1,"It's your turn!");
         count = 1;
         for(let i=localStorage.length-1;i>=0;i--){
@@ -94,10 +94,13 @@ function init(){
             if (winner){
                 stop = true;
                 if(winner === "x won!"){
-                    results[0] += 1
+                    results[0] += 1;
                 }
                 else if(winner === "o won!"){
-                    results[2] += 1
+                    results[2] += 1;
+                }
+                else if(winner === "Tie"){
+                    results[1] += 1;
                 }
                 window.localStorage.setItem("results",JSON.stringify(results));
                 view.updateScores(results[0],results[1],results[2]);
