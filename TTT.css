@@ -29,6 +29,7 @@ body{
     outline-color: white;
 }
 
+
 button{
     background-color: transparent;
     border-radius: 4px;
@@ -281,12 +282,25 @@ span{
     }
 }
 @media (max-width: 600px) {
+    main{
+        position: fixed;
+        top: 50%;
+        left: 50%;
+  /* bring your own prefixes */
+        transform: translate(-50%, -50%);
+}
+    }
     .menu{
         width:300px;
     }
     .squares{
         width: 90px;
         height: 90px;
+    }
+    .squares:active{
+        width: 110px;
+        height: 110px;
+        
     }
     .grid{
         width : 350px;
