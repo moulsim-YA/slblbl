@@ -118,7 +118,7 @@ button:hover{
         transform: translateY(0);
     }
 }
-@media (min-width: 700px) {
+@media (max-width: 700px) {
     main, .turns {
       width: 490px;
       
