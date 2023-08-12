@@ -64,7 +64,9 @@ function init(){
     
     view.PlayerMoveEventListener(event => {
         let winner;
+        
         if(stop === false){
+            
             if(pressed[event.target.id-1] === 0){
                 pressed[event.target.id-1] = 1;
                 console.log(pressed);
@@ -91,10 +93,10 @@ function init(){
             winner = store.check_winner(parse,pressed);
             if (winner){
                 stop = true;
-                if(winner === "x"){
+                if(winner === "x won!"){
                     results[0] += 1
                 }
-                else if(winner === "o"){
+                else if(winner === "o won!"){
                     results[2] += 1
                 }
                 window.localStorage.setItem("results",JSON.stringify(results));

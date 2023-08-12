@@ -119,9 +119,15 @@ button:hover{
     }
 }
 @media (min-width: 768px) {
-    main {
+    main, .turns {
       width: 490px;
       
+    }
+    .grid{
+        width:490px;
+        grid-template-columns: repeat(3,90px);
+        grid-template-rows:repeat(3,90px) 30px;
+        gap: 5px;
     }
   }
 @keyframes turn-text-animation{
