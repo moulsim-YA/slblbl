@@ -22,7 +22,7 @@ body{
 body{
     display: flex;
     flex-direction: column;
-    margin-left : 20px;
+    
     padding: 90px 90px;
     color: white;
     align-items: center;
@@ -118,7 +118,7 @@ button:hover{
         transform: translateY(0);
     }
 }
-@media (min-width: 768px) {
+@media (min-width: 700px) {
     main, .turns {
       width: 490px;
       
