@@ -1,3 +1,4 @@
+
 export default class Storage{
     winning_patterns = [
         [1, 2, 3],

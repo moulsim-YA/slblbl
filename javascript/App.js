@@ -1,3 +1,4 @@
+
 import View from "./view.js";
 import Storage from "./store.js";
 let count = 1;
@@ -127,4 +128,5 @@ function init(){
    
 
 }
+
 window.addEventListener("load",init());
