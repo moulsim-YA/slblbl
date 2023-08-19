@@ -71,7 +71,7 @@ export default class Storage{
             console.log(iter);
            
             
-            if(iter === 8&& parse ===true){
+            if(iter === 9 && parse ===true){
                 return "Tie";
             }
         }
