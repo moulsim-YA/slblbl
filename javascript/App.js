@@ -1,4 +1,5 @@
 
+
 import View from "./view.js";
 import Storage from "./store.js";
 let count = 1;
@@ -88,6 +89,7 @@ function init(){
                 else if(count === 9){
                     view.updateScores(results[0],results[1],results[2]);
                     view.initializeMoves(event.target,current_player,end,"Game Over!");
+                    store.save_moves(String(event.target.id),current_player.id); 
                 }
 
         }
@@ -105,7 +107,6 @@ function init(){
                 }
                 window.localStorage.setItem("results",JSON.stringify(results));
                 view.updateScores(results[0],results[1],results[2]);
-                parse = false;
                 view.openModal(`${winner}`);
                 view.playAgain((event) => {
                     for(let i=localStorage.length-1;i>=0;i--){

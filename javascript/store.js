@@ -1,4 +1,3 @@
-
 export default class Storage{
     winning_patterns = [
         [1, 2, 3],
@@ -18,56 +17,65 @@ export default class Storage{
         const item = window.localStorage.getItem(String(key));
         return item;
     }
-    check_winner(parse,pressed){
-        
-        const len = this.winning_patterns.length;
-        var key =[];
-        let count = 0;
+    get_keys(arg){
         for(let k =0 ;k<localStorage.length;k++){
-            key[k] = localStorage.key(k);
+            arg[k] = localStorage.key(k);
         }
+    }
+    check_tie(){
+
+    }
+    check_winner(parse,pressed){
+ 
+        const len = this.winning_patterns.length;
+        var record = [0,0]
+        let iter = 0;
+        let keys = [];
+        this.get_keys(keys);
+
         for(let i=0;i<len;i++){
-            var record = [0,0]
+            record = [0,0]
             if (parse === true){
                 for(let j = 0; j<3;j++){
-                    for(let item in key){
-                        if(key[item] == this.winning_patterns[i][j]){
-                            if(window.localStorage.getItem(String(key[item])) ==="x"){
+                    for(let item in keys){
+                        if(keys[item] == this.winning_patterns[i][j]){
+                            if(window.localStorage.getItem(String(keys[item])) ==="x"){
                                 record[0] += 1;
                             }
-                            if(window.localStorage.getItem(String(key[item])) ==="o"){
+                            if(window.localStorage.getItem(String(keys[item])) ==="o"){
                                 record[1] += 1;
                             } 
-                            
-                            if(record[0] === 3){
-                                record = [0,0];
-                                parse = false
-                                return "x won!";
-                            }
-                            if(record[1] === 3){
-                                record = [0,0];
-                                parse = false
-                                return "o won!";
-                            }
                             
                         }
                     }
                 }
             }
+            
         
-            
-            
-        }
-        if(record[0] !== 3 && record[1] !== 3){
-            for(let i= 0; i<9;i++){
-                if(pressed[i] === 1){
-                    count += 1;
-                }
+            if(pressed[i] === 1){
+                iter += 1;
             }
-            if(count === 9){
+            if(record[0] === 3){
+                record = [0,0];
+                parse = false
+                return "x won!";
+            }
+            if(record[1] === 3){
+                record = [0,0];
+                parse = false
+                return "o won!";
+            }
+            if (parse === false){
+                iter = 0;
+            }
+            console.log(iter);
+           
+            
+            if(iter === 8&& parse ===true){
                 return "Tie";
             }
-            
         }
+            
+        
     }
 }
